@@ -1,0 +1,13 @@
+name: app_horario
+title: app_horario
+username: golismeando
+account: golismeando
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15817260
+bundleId: 12501870
+url: https://golismeando.shinyapps.io/app_horario/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 00_procesa_excel.R|MODELO_HORARIO_curso_26_27_20260724.xls
