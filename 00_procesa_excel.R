@@ -26,5 +26,22 @@ horario <- horario[
 keep_cols <- c("id", "dia", "smstr", "nd", "tipus", "codaula", hour_cols)
 horario   <- horario[, ..keep_cols]
 
+# Comprobar estructura
+horario_old <- fread("horario.csv")
+if (!identical(names(horario), names(horario_old))) {
+  stop(
+    paste0(
+      "La estructura del nuevo horario no coincide con horario.csv.\n",
+      "Columnas esperadas: ",
+      paste(names(horario_old), collapse = ", "),
+      "\nColumnas obtenidas: ",
+      paste(names(horario), collapse = ", ")
+    )
+  )
+}
+if (nrow(horario) == 0L) {
+  stop("El horario procesado no contiene ninguna fila.")
+}
+
 # Igual que el fichero antiguo: separado por tabuladores
 fwrite(x = horario, file = "horario.csv")
